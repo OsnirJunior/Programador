@@ -141,18 +141,25 @@ programa
         eixo()
 	   g.definir_tamanho_texto(30.0)	
 	   g.definir_cor(g.COR_PRETO)
-	   g.desenhar_linha(40, 250, 100, 250)
-	   g.desenhar_linha(100, 250, 70, 200)
-	   g.desenhar_linha(40, 250, 70, 200)
-	   g.desenhar_texto(120, 215, "=")
-	   g.desenhar_texto(150, 215, ""+delta)
-	   g.desenhar_texto(40, 300, "X1 = ")
-	   g.desenhar_texto(115, 300, m.arredondar(x1, 2)+"")
-	   g.desenhar_texto(40, 350, "X2 = ")
-	   g.desenhar_texto(115, 350, m.arredondar(x2, 2)+"")
-	   g.desenhar_texto(250, 300, "XV = ")
-	   g.desenhar_texto(330, 300, m.arredondar(xv, 2)+"")
-	   g.desenhar_texto(250, 350, "YV = ")
+	   g.desenhar_linha(40, 225, 60, 225)
+	   g.desenhar_linha(60, 225, 50, 200)
+	   g.desenhar_linha(40, 225, 50, 200)
+	   g.desenhar_texto(75, 200, "=")
+	   g.definir_tamanho_texto(20.00)
+	   g.desenhar_texto(110, 205, "b²- 4.a.c")
+	   g.desenhar_retangulo(200, 195, 70, 35, falso, falso)
+	   g.desenhar_texto(220, 205, ""+delta)
+	   g.desenhar_texto(40, 450, "X1 = ")
+	   g.desenhar_texto(115, 450, m.arredondar(x1, 2)+"")
+	   g.desenhar_texto(40, 550, "X2 = ")
+	   g.desenhar_texto(115, 550, m.arredondar(x2, 2)+"")
+	   g.desenhar_texto(40, 275, "Xv = ")
+	   g.desenhar_texto(92, 268, "-b")
+	   g.desenhar_texto(92, 288, "2a")
+	   g.desenhar_linha(88, 285, 115, 285)
+	   g.desenhar_retangulo(130, 268, 70, 35, falso, falso)
+	   g.desenhar_texto(150, 278, m.arredondar(xv, 2)+"")
+	   g.desenhar_texto(250, 350, "Yv = ")
 	   g.desenhar_texto(330, 350, m.arredondar(yv, 2)+"")
         g.renderizar()
     }
@@ -332,9 +339,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5563; 
+ * @POSICAO-CURSOR = 5800; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {x_mouse, 9, 49, 7}-{b, 10, 56, 1}-{b2, 10, 67, 2}-{zoom, 14, 69, 4};
+ * @SIMBOLOS-INSPECIONADOS = {x_mouse, 9, 49, 7};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor;
  */
