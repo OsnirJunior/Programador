@@ -7,10 +7,10 @@ programa
 	inclua biblioteca Matematica-->m
 
 	inteiro CINZA=g.criar_cor(211,211,211),x_mouse=0,y_mouse=0
-	inteiro CINZA2=g.criar_cor(128,128,128),a=1,b=6,c=5,b2=b,c2=c
+	inteiro CINZA2=g.criar_cor(128,128,128),a=0,b=0,c=0,b2=b,c2=c
 	inteiro cont=5,cont2=-5
-	real vetor_x[2000],vetor_x2[2000],vetor_y[2000]
-	logico avermelhar1=falso,avermelhar2=falso,avermelhar3=falso,avermelhar4=falso,avermelhar5=falso
+	real vetor_x[5000],vetor_y[5000]
+	logico avermelhar1=falso,avermelhar2=falso,avermelhar3=falso,avermelhar4=falso,avermelhar5=falso,avermelhar6=falso,avermelhar7=falso,avermelhar8=falso
 	real x1=0.00,x2=0.00,xv=0.00,yv=0.00,delta=0.00,y=335.00,zoom=-50.0,x=0.0,xc = 750, yc=350
 
 	funcao inicio()
@@ -28,7 +28,7 @@ programa
 		}
 	}
 	funcao teclado(){
-		u.aguarde(125)
+		u.aguarde(100)
 		se(mou.botao_pressionado(mou.BOTAO_ESQUERDO) e y_mouse<=160 e y_mouse>=120 e x_mouse>=40 e x_mouse<=80){
 			avermelhar1=verdadeiro
 			avermelhar2=falso
@@ -44,33 +44,38 @@ programa
 			avermelhar2=falso
 			avermelhar3=verdadeiro
 		}
+		se(mou.botao_pressionado(mou.BOTAO_ESQUERDO) e y_mouse<=87 e y_mouse>=47 e x_mouse>=600 e x_mouse<=640){
+			avermelhar6=verdadeiro
+			avermelhar7=falso
+			avermelhar8=falso
+		}
+		se(mou.botao_pressionado(mou.BOTAO_ESQUERDO) e y_mouse<=87 e y_mouse>=47 e x_mouse>=650 e x_mouse<=690){
+			avermelhar6=falso
+			avermelhar7=verdadeiro
+			avermelhar8=falso
+		}
+		se(mou.botao_pressionado(mou.BOTAO_ESQUERDO) e y_mouse<=87 e y_mouse>=47 e x_mouse>=700 e x_mouse<=740){
+			avermelhar6=falso
+			avermelhar7=falso
+			avermelhar8=verdadeiro
+		}
 		se(mou.botao_pressionado(mou.BOTAO_ESQUERDO) e y_mouse<=87 e y_mouse>=47 e x_mouse>=900 e x_mouse<=940){
 			avermelhar4=verdadeiro
 			avermelhar5=falso
-			zoom+=-1
+			zoom+=-3
 		}
-		se(mou.botao_pressionado(mou.BOTAO_ESQUERDO) e y_mouse<=87 e y_mouse>=47 e x_mouse>=950 e x_mouse<=990 e zoom!=1){
+		se(mou.botao_pressionado(mou.BOTAO_ESQUERDO) e y_mouse<=87 e y_mouse>=47 e x_mouse>=950 e x_mouse<=990 e zoom!=-2){
 			avermelhar4=falso
 			avermelhar5=verdadeiro
-			zoom+=+1
+			zoom+=+3
 			
 		}
 		se(t.tecla_pressionada(t.TECLA_ADICAO) e avermelhar1==verdadeiro){
-			se(a==-1){
-				a=1
-			}
-			senao{
-				a+=1
-			}
+			a+=1
 		}
 		
 		se(t.tecla_pressionada(t.TECLA_SUBTRACAO) e avermelhar1==verdadeiro){
-			se(a==1){
-				a=-1
-			}
-			senao{
-				a-=1
-			}
+			a-=1
 		}
 		
 		se(t.tecla_pressionada(t.TECLA_ADICAO) e avermelhar2==verdadeiro){
@@ -130,24 +135,23 @@ programa
 			g.desenhar_linha(734,i,765,i)
 		}
 		parabola()
-		parabola2()
-		
 		g.definir_cor(g.COR_BRANCO)
 
 		pontos_xy()
 		g.definir_cor(g.COR_BRANCO)
 		g.desenhar_retangulo(0, 0, 500, 600, falso, verdadeiro)
+		g.desenhar_retangulo(0, 0, 1000, 100, falso, verdadeiro)
+		g.desenhar_retangulo(0, 600, 1000, 650, falso, verdadeiro)
+		g.desenhar_retangulo(1000, 0, 1024, 650, falso, verdadeiro)
 		g.definir_cor(g.COR_PRETO)
 		
 		g.desenhar_retangulo(20,10,980,80,falso,falso)
 		g.desenhar_retangulo(20,100,450,500,falso,falso)
 		g.desenhar_retangulo(500,100,500,500,falso,falso)
 		g.definir_cor(g.COR_AZUL)
-		numeros()
 		quadrados()
 		coeficientes()
-		eixo()
-		
+		eixo()	
 		g.definir_tamanho_texto(30.0)	
 		g.definir_cor(g.COR_PRETO)
 		g.desenhar_linha(40,225,60,225)
@@ -160,16 +164,16 @@ programa
 		g.desenhar_texto(220,205,""+delta)
 		g.desenhar_texto(40,425,"X1=")
 		g.desenhar_retangulo(95,416,70,35,falso,falso)
-		g.desenhar_texto(115,425,m.arredondar(x1,2)+"")
+		g.desenhar_texto(115,425,m.arredondar(x1,1)+"")
 		g.desenhar_texto(40,475,"X2=")
 		g.desenhar_retangulo(95,465,70,35,falso,falso)
-		g.desenhar_texto(115,475,m.arredondar(x2,2)+"")
+		g.desenhar_texto(115,475,m.arredondar(x2,1)+"")
 		g.desenhar_texto(40,275,"Xv=")
 		g.desenhar_texto(92,268,"-b")
 		g.desenhar_texto(92,288,"2a")
 		g.desenhar_linha(88,285,115,285)
 		g.desenhar_retangulo(130,268,70,35,falso,falso)
-		g.desenhar_texto(150,278,m.arredondar(xv,2)+"")
+		g.desenhar_texto(150,278,m.arredondar(xv,1)+"")
 		g.desenhar_texto(40,350,"Yv=")
 		g.desenhar_texto(92,343,"-")
 		g.desenhar_linha(100,356,110,356)
@@ -177,30 +181,10 @@ programa
 		g.desenhar_linha(105,345,100,356)
 		g.desenhar_linha(88,360,115,360)
 		g.desenhar_texto(92,365,"4a")
-		g.desenhar_texto(149,355,m.arredondar(yv,2)+"")
+		g.desenhar_texto(149,355,m.arredondar(yv,1)+"")
 		g.desenhar_retangulo(130,344,70,35,falso,falso)
 		
 		g.renderizar()
-	}
-	funcao numeros(){
-		/*cont=50
-		se(cont>-60){
-			g.definir_cor(g.COR_PRETO)
-			g.definir_tamanho_texto(12.00)
-			para(inteiro i=95;i<=570;i+=47){
-				g.desenhar_texto(475,i,""+cont)
-				cont-=10
-			}
-		}
-		cont2=-50
-		se(cont2<60){
-			g.definir_cor(g.COR_PRETO)
-			g.definir_tamanho_texto(12.00)
-			para(inteiro i=497;i<=1000;i+=50){
-				g.desenhar_texto(i,581,""+cont2)
-				cont2+=10
-			}
-		}*/
 	}
 	funcao quadrados(){
 		b2=b
@@ -245,7 +229,7 @@ programa
 		}
 
 		g.definir_cor(g.COR_PRETO)
-		g.desenhar_texto(322,125,"=0")
+		g.desenhar_texto(322,125,"=f(x)")
 		g.desenhar_retangulo(900,47,40,40,falso,falso)
 		g.definir_tamanho_texto(30.00)
 		g.desenhar_texto(910,53,"+")
@@ -264,6 +248,30 @@ programa
 			g.desenhar_texto(963,50,"-")
 			g.desenhar_retangulo(950,47,40,40,falso,falso)
 			avermelhar5=falso
+		}
+		g.definir_cor(g.COR_PRETO)
+		g.desenhar_retangulo(600,47,40,40,falso,falso)
+		g.desenhar_elipse(618, 65, 4, 4, verdadeiro)
+		se(avermelhar6==verdadeiro){
+			g.definir_cor(g.COR_VERMELHO)
+			g.desenhar_elipse(618, 65, 4, 4, verdadeiro)
+			g.desenhar_retangulo(600,47,40,40,falso,falso)
+		}
+		g.definir_cor(g.COR_PRETO)
+		g.desenhar_retangulo(650,47,40,40,falso,falso)
+		g.desenhar_elipse(667, 63, 8, 8, verdadeiro)
+		se(avermelhar7==verdadeiro){
+			g.definir_cor(g.COR_VERMELHO)
+			g.desenhar_elipse(667, 63, 8, 8, verdadeiro)
+			g.desenhar_retangulo(650,47,40,40,falso,falso)
+		}
+		g.definir_cor(g.COR_PRETO)
+		g.desenhar_retangulo(700,47,40,40,falso,falso)
+		g.desenhar_linha(700, 87, 740, 47)
+		se(avermelhar8==verdadeiro){
+			g.definir_cor(g.COR_VERMELHO)
+			g.desenhar_linha(700, 87, 740, 47)
+			g.desenhar_retangulo(700,47,40,40,falso,falso)
 		}
 	}
 	funcao eixo(){
@@ -289,8 +297,6 @@ programa
 			g.definir_cor(g.COR_BRANCO)
 			g.desenhar_texto((-xv*zoom)+755,(yv*zoom)+337,xv+","+yv)
 			g.definir_cor(g.COR_PRETO)
-		}
-		se(c>=0 ou c<=0){
 			g.desenhar_elipse(750,(c*zoom)+335,15,15,verdadeiro)
 			g.definir_cor(g.COR_BRANCO)
 			g.desenhar_texto(755,(c*zoom)+337,""+c)
@@ -314,39 +320,42 @@ programa
 		yv=-delta/yv
 		x1=(-(b)+m.raiz(delta,2))/(2*a)
 		x2=(-(b)-m.raiz(delta,2))/(2*a)
-		
-	}
-	funcao parabola2(){
-		
-		
-		
 	}
 	funcao pontos_xy(){
-		x=-10.00
-		/*para(inteiro i=0;i>=990;i+=1){
-			vetor_x[i]=0
-			vetor_y[i]=0
-		}*/
-		para(inteiro i=0;i<2000;i++){
+		x=-50.00
+		para(inteiro i=0;i<4999;i++){
 			x+=0.02
 			vetor_x[i]=x
 			vetor_y[i]=(a*m.potencia(vetor_x[i], 2)+b*vetor_x[i]+c)*zoom
-			se((vetor_x[i]+xc > 500) e (vetor_x[i]+xc < 755) e (vetor_y[i]+yc >100) e (vetor_y[i]+yc<600)){
+
+			se(avermelhar6 == verdadeiro){
+				g.definir_cor(g.COR_PRETO)
+				g.desenhar_ponto(vetor_x[i]*-zoom+xc, vetor_y[i]+yc)
+			}
+				
+			se(avermelhar7 == verdadeiro){
 				g.definir_cor(g.COR_PRETO)
 				g.desenhar_elipse(vetor_x[i]*-zoom+xc, vetor_y[i]+yc, 2, 2, falso)
-				
 			}
+			se(avermelhar8 == verdadeiro){
+				g.definir_cor(g.COR_PRETO)
+				g.desenhar_linha(vetor_x[i]*-zoom+xc, vetor_y[i]+yc, vetor_x[i+1]*-zoom+xc, vetor_y[i+1]+yc)
+			}
+			
 		}
 	}
+	//Versão final de um traçador gráfico de funções, Feito Por William Colasso e Osnir Portinari, na aprendizagem industrial de programador de sistema
 }
+
+
 /* $$$ Portugol Studio $$$ 
  * 
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 8775; 
+ * @POSICAO-CURSOR = 9677; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @SIMBOLOS-INSPECIONADOS = {vetor_x, 12, 6, 7};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor;
  */
