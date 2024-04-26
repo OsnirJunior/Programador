@@ -8,7 +8,7 @@ programa
 	inclua biblioteca Matematica-->m
 	//criar/iniciar variaveis
 	inteiro a=0,b=0,c=0,b2=b,c2=c
-	real vetor_x[5000],vetor_y[5000]
+	real vetor_x[5000],vetor_y[5000],x_mouse = 0, y_mouse =0
 	logico avermelhar[8]
 	real x1=0.00,x2=0.00,xv=0.00,yv=0.00,delta=0.00,zoom=40.0,x=0.0,xc = 750, yc=350
 	
@@ -340,6 +340,7 @@ programa
 		x2=(-(b)-m.raiz(delta,2))/(2*a)
 	}
 	funcao pontos_xy(){
+		
 		/*Por fim o desenho final, colocaremos "todas" as coordenadas de x e y em um vetor, 
 		 * e dependedo do modo de desenho(que varia conforme o as variaveis lógicas) ele serão 
 		 * desenhados em todas as coordenadas do vetor.
@@ -366,6 +367,14 @@ programa
 			
 		}
 	}
+	funcao mouse(){
+		x_mouse=mou.posicao_x()
+		y_mouse=mou.posicao_y()
+		se(0==0){
+
+		}
+		
+	}
 	//Versão final de um traçador gráfico de funções quadraticas, Feito Por William Colasso e Osnir Portinari, na aprendizagem industrial de programador de sistemas PSVII
 }
 /* $$$ Portugol Studio $$$ 
@@ -373,10 +382,10 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 11468; 
+ * @POSICAO-CURSOR = 330; 
  * @DOBRAMENTO-CODIGO = [14, 29, 95, 103, 164, 256, 287, 308, 331];
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {x_mouse, 10, 40, 7}-{y_mouse, 10, 50, 7};
+ * @SIMBOLOS-INSPECIONADOS = {x_mouse, 11, 34, 7}-{y_mouse, 11, 47, 7};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
