@@ -7,8 +7,13 @@ programa
 	inclua biblioteca Graficos-->g
 	inclua biblioteca Matematica-->m
 	//criar/iniciar variaveis
+<<<<<<< HEAD
 	inteiro a=0,b=0,c=0,b2=b,c2=c
 	real vetor_x[5000],vetor_y[5000],x_mouse = 0, y_mouse =0
+=======
+	inteiro a=0,b=0,c=0,b2=b,c2=c,y_mouse = 315, x_mouse = 750
+	real vetor_x[5000],vetor_y[5000]
+>>>>>>> fe401ba86b30dd0f71bd456e81b4344b5c1706ac
 	logico avermelhar[8]
 	real x1=0.00,x2=0.00,xv=0.00,yv=0.00,delta=0.00,zoom=40.0,x=0.0,xc = 750, yc=350
 	
@@ -310,21 +315,21 @@ programa
 		se(delta>0){	
 			g.definir_tamanho_texto(10.0)
 			g.definir_cor(g.COR_PRETO)
-			g.desenhar_elipse((x1*zoom)+750,335,15,15,verdadeiro)
+			g.desenhar_elipse((x1*zoom)+750,350,15,15,verdadeiro)
 			g.definir_cor(g.COR_BRANCO)
-			g.desenhar_texto((x1*zoom)+752,337,""+x1)
+			g.desenhar_texto((x1*zoom)+750,350,""+x1)
 			g.definir_cor(g.COR_PRETO)
-			g.desenhar_elipse((x2*zoom)+750,335,15,15,verdadeiro)
+			g.desenhar_elipse((x2*zoom)+750,350,15,15,verdadeiro)
 			g.definir_cor(g.COR_BRANCO)
-			g.desenhar_texto((x2*zoom)+752,337,""+x2)
+			g.desenhar_texto((x2*zoom)+750,350,""+x2)
 			g.definir_cor(g.COR_PRETO)
 			g.desenhar_elipse((xv*zoom)+750,(-yv*zoom)+335,15,15,verdadeiro)
 			g.definir_cor(g.COR_BRANCO)
-			g.desenhar_texto((xv*zoom)+755,(-yv*zoom)+337,xv+","+yv)
+			g.desenhar_texto((xv*zoom)+750,(-yv*zoom)+337,xv+","+yv)
 			g.definir_cor(g.COR_PRETO)
 			g.desenhar_elipse(750,(-c*zoom)+335,15,15,verdadeiro)
 			g.definir_cor(g.COR_BRANCO)
-			g.desenhar_texto(755,(-c*zoom)+337,""+c)
+			g.desenhar_texto(750,(-c*zoom)+337,""+c)
 			g.definir_cor(g.COR_PRETO)
 		}
 		
@@ -368,12 +373,19 @@ programa
 		}
 	}
 	funcao mouse(){
+<<<<<<< HEAD
+=======
+		//coordenada mouse
+>>>>>>> fe401ba86b30dd0f71bd456e81b4344b5c1706ac
 		x_mouse=mou.posicao_x()
 		y_mouse=mou.posicao_y()
 		se(0==0){
 
 		}
+<<<<<<< HEAD
 		
+=======
+>>>>>>> fe401ba86b30dd0f71bd456e81b4344b5c1706ac
 	}
 	//Versão final de um traçador gráfico de funções quadraticas, Feito Por William Colasso e Osnir Portinari, na aprendizagem industrial de programador de sistemas PSVII
 }
@@ -382,10 +394,17 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
+<<<<<<< HEAD
  * @POSICAO-CURSOR = 330; 
  * @DOBRAMENTO-CODIGO = [14, 29, 95, 103, 164, 256, 287, 308, 331];
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {x_mouse, 11, 34, 7}-{y_mouse, 11, 47, 7};
+=======
+ * @POSICAO-CURSOR = 9975; 
+ * @DOBRAMENTO-CODIGO = [29, 95, 103, 164, 256, 287, 331];
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = {y_mouse, 10, 31, 7}-{x_mouse, 10, 46, 7};
+>>>>>>> fe401ba86b30dd0f71bd456e81b4344b5c1706ac
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
